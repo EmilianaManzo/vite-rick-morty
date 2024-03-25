@@ -5,12 +5,13 @@
 </script>
 
 <template>
-  <div>
-
-  </div>
+  <header>
+    header
+  </header>
 </template>
 
 
 <style lang="scss" scoped>
+@use '../assets/scss/main.scss' as *;
 
 </style>
