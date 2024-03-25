@@ -11,11 +11,12 @@
 
 <template>
   <div class="col my-5 ">
-    <div class="card rounded-5" style="width: 18rem;">
-      <img :src="image" class="card-img-top rounded-circle" :alt="name">
-      <div class="card-body">
-        <h5 class="card-title">{{ name }}</h5>
-        <p class="card-text">{{ status }}</p>
+    <div class="" style="width: 18rem;">
+      <img :src="image" class="card-img-top rounded-circle " :alt="name">
+      <div class="card-body rounded-pill my-2 text-center">
+        <h5 class="card-title my-1 ">{{ name }}</h5>
+        <div class="line my-3 "></div>
+        <p class="card-text m-0 ">{{ status }}</p>
         <p class="card-text">{{ species }}</p>
       </div>
     </div>
@@ -25,5 +26,18 @@
 
 <style lang="scss" scoped>
 @use '../../assets/scss/main.scss' as *;
+
+.card-body{
+  border: 2px solid rgb(187, 159, 240);
+  .line{
+    border: 1px solid rgb(187, 159, 240);
+    width: 30%;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    
+  }
+  color: #110834;
+}
 
 </style>

@@ -25,6 +25,9 @@
       :image="card.image"
       />
     </div>
+    <div class="text-center my-5">
+      <p>Risultati trovati: 20</p>
+    </div>
   </main> 
 </template>
 
