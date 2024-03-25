@@ -14,8 +14,17 @@
 </script>
 
 <template>
-  <main>
-    main
+  <main class=" container ">
+    <div class="row row-cols-2 row-cols-sm-3 row-cols-lg-4  ">
+      <Card 
+      v-for="card in store.cardInfo "
+      :key="card.id"
+      :name="card.name"
+      :status="card.status"
+      :species="card.species"
+      :image="card.image"
+      />
+    </div>
   </main> 
 </template>
 

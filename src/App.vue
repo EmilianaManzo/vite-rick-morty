@@ -19,12 +19,10 @@
         console.log('CI SIAMO!');
         console.log(this.store);
         axios.get(this.store.apiUrl, {
-          params:{
-            character : 20
-          }
         })
         .then(result =>{
-          this.store.cardInfo = result.data
+          console.log(result.data);
+          this.store.cardInfo = result.data.results
           console.log(this.store.cardInfo);
         })
         .catch(error => {
