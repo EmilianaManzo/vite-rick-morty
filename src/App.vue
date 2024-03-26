@@ -30,21 +30,11 @@
         .catch(error => {
           console.log(error);
         })
-      },
-
-      getAllNames(){
-          axios.get(this.store.nameUrl)
-          .then(result =>{
-            console.log(result.data.results);
-            this.store.nameList = result.data.results.map(item => item.name)
-            console.log(this.store.nameList)
-          })
-        }
+      }
     },
 
     mounted(){
       this.getApi();
-      this.getAllNames();
     }
   }
 </script>

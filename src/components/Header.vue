@@ -16,10 +16,7 @@ import { store } from '../data/store';
         }
         this.$emit('searchName')
       }
-    },
-    // mounted(){
-    //   this.searchName()
-    // }
+    }
   }
 </script>
 
@@ -35,9 +32,9 @@ import { store } from '../data/store';
 
         <datalist id="datalistOptions">
           <option
-          v-for="(name, indice) in this.store.nameList"
-          :key="indice"
-          :value="name"></option>
+          v-for="card in this.store.cardInfo"
+          :key="card.id"
+          :value="card.name"></option>
         </datalist>
 
         <label for="" class="mx-2">

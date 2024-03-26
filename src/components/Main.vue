@@ -26,7 +26,7 @@
       />
     </div>
     <div class="text-center my-5">
-      <p>Risultati trovati: 20</p>
+      <p>Risultati trovati:{{ this.store.cardInfo.length }} </p>
     </div>
   </main> 
 </template>
