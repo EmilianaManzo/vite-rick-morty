@@ -16,9 +16,11 @@
 
     methods:{
       getApi(){
+        this.store.cardInfo =[];
         console.log('CI SIAMO!');
         console.log(this.store);
         axios.get(this.store.apiUrl, {
+          params: this.store.queryParam
         })
         .then(result =>{
           console.log(result.data);
@@ -28,11 +30,21 @@
         .catch(error => {
           console.log(error);
         })
-      }
+      },
+
+      getAllNames(){
+          axios.get(this.store.nameUrl)
+          .then(result =>{
+            console.log(result.data.results);
+            this.store.nameList = result.data.results.map(item => item.name)
+            console.log(this.store.nameList)
+          })
+        }
     },
 
     mounted(){
-      this.getApi()
+      this.getApi();
+      this.getAllNames();
     }
   }
 </script>

@@ -1,22 +1,25 @@
 <script>
+import axios from 'axios';
 import { store } from '../data/store';
   export default {
     data(){
       return{
         store,
-        name: ''
+        nameToSearch: ''
       }
     },
     methods:{
-      searchName(){
+      searchName(isSearch){
+        console.log('ciao')
         this.store.queryParam = {
-          offset: 0,
-          name: this.name
+          name: this.nameToSearch
         }
         this.$emit('searchName')
-        console.log('ciao')
       }
-    }
+    },
+    // mounted(){
+    //   this.searchName()
+    // }
   }
 </script>
 
@@ -24,17 +27,17 @@ import { store } from '../data/store';
   <header>
     <div class="container text-center">
       <h1 class=" fw-bold my-4"> - Rick&Morty -</h1>
-      <form action="">
+      <form action="" @submit.prevent="false">
         <input 
-        v-model.trim="name"
-        @keyup.enter="searchName()"
+        v-model.trim="nameToSearch"
+        @keyup.enter="searchName"
         class="form-control w-25 " list="datalistOptions" id="exampleDataList" placeholder="Search name">
 
         <datalist id="datalistOptions">
           <option
-          v-for="card in this.store.cardInfo"
-          :key="card.id"
-          :value="card.name"></option>
+          v-for="(name, indice) in this.store.nameList"
+          :key="indice"
+          :value="name"></option>
         </datalist>
 
         <label for="" class="mx-2">
