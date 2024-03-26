@@ -8,6 +8,12 @@ Per i dati da stampare per ogni carta fare riferimento allo screenshot allegato
 Documentazione:
 https://rickandmortyapi.com/documentation
 
-## Svolgimento 
-1. 
-2. 
+Come detto in classe oggi completate il progetto Rick& Morty con una barra di ricerca.
+Quindi nell’header o in un componente dedicato (es SearchBar.vue) mettente on campo di ricerca per nome.
+ATTENZIONE! Per evitare inutili complicazione il componente che contienete la barra di ricerca deve essere figlio diretto di App.vue
+All’invio della ricerca verranno configurati i criteri di ricerca presenti nello store, generato un $emit che invocherà una nuova chiamata API in App.vue
+BONUS:
+aggiungere la ricerca per status
+aggiungere la ricerca per species
+aggiungere un componente che si occupa della paginazione
+far generare dinamicamente gli status e le species per le option di ricerca

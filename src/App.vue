@@ -39,7 +39,7 @@
 
 <template>
 
-  <Header />
+  <Header @searchName="getApi" />
   <Main />
 
 </template>
