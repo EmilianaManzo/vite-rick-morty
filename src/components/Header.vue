@@ -15,7 +15,16 @@ import { store } from '../data/store';
           name: this.nameToSearch,
           offset: 20
         }
+        this.nameToSearch = ''
         this.$emit('searchName')
+      },
+
+      resetApi(){
+        this.store.queryParam = {
+          name: '',
+          page : 1
+        }
+        this.$emit('resetApi')       
       }
     }
   }
@@ -44,7 +53,7 @@ import { store } from '../data/store';
         </label>
 
         <button @click="searchName" type="button" class="btn btn-info mx-2 ">Search</button>
-        <button type="button" class="btn btn-warning mx-2">Reset</button>
+        <button @click="resetApi" type="button" class="btn btn-warning mx-2">Reset</button>
     </form>
     </div>
 

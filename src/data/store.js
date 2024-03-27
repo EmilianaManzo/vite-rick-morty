@@ -7,7 +7,6 @@ export const store = reactive({
   queryParam :{
     name: '',
     page : 1
-
   },
   pageInfo:{
     pages: 0,

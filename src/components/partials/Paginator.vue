@@ -16,13 +16,13 @@ import { store } from '../../data/store'
     
   }
 </script>
-
+<!-- TODO: SISTEMARE BUG PAGINA QUANDO VENGONO MOSTRATI I RISULTATI DELLA RICERCA -->
 <template>
   <div class="text-center">
     <button
     @click="nextPage(false)"
     v-if="store.queryParam.page > 1"
-    class="btn btn-warning mx-1 "> < </button>
+    class="btn btn-warning mx-1 "> - </button>
 
     Pagina {{ store.queryParam.page }} di {{ store.pageInfo.pages }}
 

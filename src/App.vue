@@ -44,7 +44,7 @@
 
 <template>
 
-  <Header @searchName="getApi" />
+  <Header @searchName="getApi"  @resetApi="getApi"/>
   <Main />
   <Paginator @nextPage="getApi" />
 
