@@ -3,10 +3,12 @@
   import { store } from './data/store'
   import Header from './components/Header.vue';
   import Main from './components/Main.vue';
+  import Paginator from './components/partials/Paginator.vue';
   export default {
     components:{
       Header,
-      Main
+      Main,
+      Paginator
     },
     data(){
       return{
@@ -23,9 +25,10 @@
           params: this.store.queryParam
         })
         .then(result =>{
-          console.log(result.data);
+          console.log(result);
           this.store.cardInfo = result.data.results
-          console.log(this.store.cardInfo);
+          this.store.pageInfo.pages = result.data.info.pages
+          console.log(this.store.pageInfo.pages);
         })
         .catch(error => {
           console.log(error);
@@ -43,6 +46,7 @@
 
   <Header @searchName="getApi" />
   <Main />
+  <Paginator @nextPage="getApi" />
 
 </template>
 

@@ -12,7 +12,8 @@ import { store } from '../data/store';
       searchName(isSearch){
         console.log('ciao')
         this.store.queryParam = {
-          name: this.nameToSearch
+          name: this.nameToSearch,
+          offset: 20
         }
         this.$emit('searchName')
       }
@@ -42,7 +43,7 @@ import { store } from '../data/store';
           </select>
         </label>
 
-        <button type="button" class="btn btn-info mx-2 ">Search</button>
+        <button @click="searchName" type="button" class="btn btn-info mx-2 ">Search</button>
         <button type="button" class="btn btn-warning mx-2">Reset</button>
     </form>
     </div>
